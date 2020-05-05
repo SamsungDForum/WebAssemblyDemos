@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<widget xmlns="http://www.w3.org/ns/widgets"
+        xmlns:tizen="http://tizen.org/ns/widgets"
+        id="Curl sample"
+        version="1.0.0"
+        viewmodes="maximized"
+        width="1920"
+        height="1080" >
+    <access origin="*" subdomains="true"/>
+    <tizen:application id="url2file00.curl" package="url2file00" required_version="2.3"/>
+    <content src="url2file.html"/>
+    <tizen:content-security-policy>*</tizen:content-security-policy>
+    <description>Sample curl (url2file) using Tizen Sockets with Emscripten</description>
+    <feature name="http://tizen.org/feature/screen.size.all"/>
+    <name>url2file</name>
+    <tizen:privilege name="http://tizen.org/privilege/internet"/>
+    <tizen:profile name="tv"/>
+</widget>
