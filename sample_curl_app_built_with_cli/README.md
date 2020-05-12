@@ -36,7 +36,7 @@ cURL demo built using command-line tools (CLI).
    | -------- | ------------------------------------------------------------ |
    | `-s USE_SSL=1` | Flag enabling SSL library (libssl) from OpenSSL libraries. This flags is implicitly turned on by `-s USE_CURL=1` |
    | `-s USE_CRYPTO=1` | Flag enabling use crypto library (libcrypto) from OpenSSL libraries. This flags is implicitly turned on by `-s USE_SSL=1` |
-   | `-s USE_ZLIB-1` | Flag enabling use of zlib compression library. This flag is implicitly turned on by `-s USE_CURL=1` |
+   | `-s USE_ZLIB=1` | Flag enabling use of zlib compression library. This flag is implicitly turned on by `-s USE_CURL=1` |
 
    Further information regarding Emscripten build options can be found on
    [Emscripten Compiler Frontend (emcc)](https://emscripten.org/docs/tools_reference/emcc.html#emccdoc)
