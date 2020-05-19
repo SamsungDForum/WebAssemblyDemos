@@ -53,6 +53,7 @@ using ElementaryMediaTrackListener =
 using HTMLMediaElement = samsung::html::HTMLMediaElement;
 using HTMLMediaElementListener = samsung::html::HTMLMediaElementListener;
 using Seconds = samsung::wasm::Seconds;
+using SessionId = samsung::wasm::SessionId;
 
 static constexpr char kVideoTagId[] = "video-element";
 
@@ -72,7 +73,7 @@ class TrackDataPump : public ElementaryMediaTrackListener {
       : video_track_(std::move(video_track)),
         pump_worker_([this]() { this->PumpPackets(); }),
         last_reported_running_time_(0),
-        session_id_(0u) {
+        session_id_(video_track_.GetSessionId().value) {
     video_track_.SetListener(this);
   }
 
@@ -119,7 +120,7 @@ class TrackDataPump : public ElementaryMediaTrackListener {
   }
 
   // Session id changed: stamp packets with a new session id from now on.
-  void OnSessionIdChanged(uint32_t session_id) override {
+  void OnSessionIdChanged(SessionId session_id) override {
     session_id_ = session_id;
   }
 
@@ -130,14 +131,14 @@ class TrackDataPump : public ElementaryMediaTrackListener {
     struct Message {
       enum class Type { kSetBufferToPts, kSeekTo, kTerminate };
 
-      Message(Type type, Seconds time, uint32_t session_id)
+      Message(Type type, Seconds time, SessionId session_id)
         : type(type),
           time(time),
           session_id(session_id) {}
 
       Type type;
       Seconds time;
-      uint32_t session_id;
+      SessionId session_id;
     };  // struct Message
 
     void Flush() {
@@ -155,7 +156,7 @@ class TrackDataPump : public ElementaryMediaTrackListener {
       return result;
     }
 
-    void PushBufferToPts(Seconds time, uint32_t session_id) {
+    void PushBufferToPts(Seconds time, SessionId session_id) {
       {
         std::lock_guard<std::mutex> lock{messages_mutex_};
         message_queue_.emplace(
@@ -203,7 +204,7 @@ class TrackDataPump : public ElementaryMediaTrackListener {
   std::thread pump_worker_;
 
   Seconds last_reported_running_time_;
-  uint32_t session_id_;
+  SessionId session_id_;
 
   // A first frame after Seek must always be a keyframe. This method finds a
   // closest keyframe preceding the given time in sample_data.
