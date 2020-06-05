@@ -19,10 +19,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-//          *** Sample Elementary Media Stream Source Application ***
+//          *** Sample Tizen WASM Player Application ***
 //
 // This file contains sample implementation of a simple WASM module that plays
-// media content with Elementary Media Stream Source and uses hardcoded data
+// media content with Tizen WASM Player using HTMLMediaElement with
+// ElementaryMediaStreamSource as a data source. The sample uses hardcoded data
 // (see sample_data.h).
 
 #include <algorithm>

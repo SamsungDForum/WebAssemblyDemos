@@ -1,12 +1,13 @@
-# Elementary Media Stream Source - Sample Application
+# Tizen WASM Player - Sample Application
 
 ## Introduction
 
-This is a sample application showing how to use **[Elementary Media Stream Source](https://developer.samsung.com/smarttv/develop/extension-libraries/webassembly/elementary-media-stream-source/overview)**
+This is a sample application showing how to use **[Tizen WASM Player](https://developer.samsung.com/smarttv/develop/extension-libraries/webassembly/tizen-wasm-player/overview)**
 to play media on a TizenTV device using a WebAssembly module.
 
 The sample application's features are:
-* elementary media stream playback with EMSS (*Normal Latency* mode),
+* elementary media stream playback using `HTMLMediaElement` with a
+  `ElementaryMediaStreamSource` data source (*Normal Latency* mode),
 * looping video,
 * implementation of Seeking and [Multitasking](https://developer.samsung.com/SmartTV/develop/guides/fundamentals/multitasking.html).
 
