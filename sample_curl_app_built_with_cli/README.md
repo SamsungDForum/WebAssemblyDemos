@@ -19,11 +19,12 @@ cURL demo built using command-line tools (CLI).
 2. Compile [url2file.c](./url2file.c) demo
 
    ```bash
-   emcc -o url2file.html -s ENVIRONMENT_MAY_BE_TIZEN -s USE_CURL=1 --proxy-to-worker --preload-file cacert.pem url2file.c
+   emcc -o url2file.html -Os -s ENVIRONMENT_MAY_BE_TIZEN -s USE_CURL=1 --proxy-to-worker --preload-file cacert.pem url2file.c
    ```
 
    | Option   | Description                                                  |
    | -------- | ------------------------------------------------------------ |
+   | `-Os` | Reduce size of generated WebAssembly module. This will reduce memory consumption of WebAssembly module compilation on Samsung Smart TV. |
    | `-o url2file.html` | Name of the output, this will make that Emscripten will generate url2file.wasm, url2file.js and url2file.html |
    | `-s ENVIRONMENT_MAY_BE_TIZEN` | Flag indicating that we want to use Samsung Tizen Emscripten extensions available on Samsung Smart TV. This flag is necessary to use POSIX sockets APIs in your application. |
    | `-s USE_CURL=1` | Flag indicating that we want to build and use cURL library provided with Samsung Customized Emscripten. Note that during 1st build full library is being built, so compilation may take a while. However after 1st build cURL library is cached. See more on details on [Emscripten Ports](https://emscripten.org/docs/compiling/Building-Projects.html#emscripten-ports) |

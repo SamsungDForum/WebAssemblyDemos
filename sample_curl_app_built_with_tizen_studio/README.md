@@ -48,6 +48,8 @@ cURL demo built using Tizen Studio.
    - Right click on your WebAssembly module project
    - Select 'Properties' from the context menu
    - Select 'C/C++ Build' -> 'Settings'
+   - On 'Tool Settings' tab select 'Emscripten C++ compiler' -> 'Optimization'
+   - Select 'Level -Os' as 'Optimization level'
    - On 'Tool Settings' tab select 'Emscripten C++ compiler' -> 'Miscellaneous'
    - Append following flag to 'Other flags':
 
@@ -70,13 +72,14 @@ cURL demo built using Tizen Studio.
    - Append following flags to 'Linker flags':
 
      ```bash
-     -s ENVIRONMENT_MAY_BE_TIZEN -s USE_CURL=1 --preload-file ../cacert.pem@/cacert.pem -pthread -s USE_PTHREADS=1 -s PTHREAD_POOL_SIZE=2
+     -Os -s ENVIRONMENT_MAY_BE_TIZEN -s USE_CURL=1 --preload-file ../cacert.pem@/cacert.pem -pthread -s USE_PTHREADS=1 -s PTHREAD_POOL_SIZE=2
      ```
 
    Flags description:
 
    | Flag     | Description  |
    | -------- | ------------ |
+   | `-Os` | Reduce size of generated WebAssembly module. This will reduce memory consumption of WebAssembly module compilation on Samsung Smart TV. This flag is required as both compile and link time flag. |
    | `-s ENVIRONMENT_MAY_BE_TIZEN` | flag indicating that we want to use Samsung Tizen Emscripten extensions available on Samsung Tizen TVs. This flag is necessary to use POSIX sockets APIs in your application. |
    | `-s USE_CURL=1` | flag indicating that we want to build and use cURL library provided with Samsung modified Tizen Emscripten toolchain. Note that during 1st build full library is being built, so compilation may take a while. However after 1st build cURL library is cached. See more on details on [Emscripten Ports](https://emscripten.org/docs/compiling/Building-Projects.html#emscripten-ports) |
    | `--preload-file ../cacert.pem@/cacert.pem` | this option allows your application to read the cacert.pem file using standard C APIs `fopen(./cacert.pem)`. Tizen Studio launches Emscripten toolchain in a `CurrentBin` directory, however we have the `cacert.pem` file in main project's directory. To avoid copying this file we use relative path. To refer to this file as `/cacert.pem` in C/C++ program we use mapping `@/cacert.pem` as described in [Modifying file locations in the virtual file system](https://emscripten.org/docs/porting/files/packaging_files.html#modifying-file-locations-in-the-virtual-file-system) |
