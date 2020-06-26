@@ -305,7 +305,7 @@ class SamplePlayer : public ElementaryMediaStreamSourceListener,
     // Then Source can be requested to enter kOpen state (where it can accept
     // elementary media data).
     source_->Open([](auto result) {
-      if (result != ElementaryMediaStreamSource::AsyncResult::kSuccess) {
+      if (result != samsung::wasm::OperationResult::kSuccess) {
         std::cout << "Cannot open ElementaryMediaStreamSource." << std::endl;
       }
       // Source entered kOpen state after Open() request.
@@ -335,8 +335,8 @@ class SamplePlayer : public ElementaryMediaStreamSourceListener,
   void OnCanPlay() override {
     if (!media_element_->IsPaused()) return;
 
-    media_element_->Play([](HTMLMediaElement::AsyncResult result) {
-      if (result != HTMLMediaElement::AsyncResult::kSuccess) {
+    media_element_->Play([](samsung::wasm::OperationResult result) {
+      if (result != samsung::wasm::OperationResult::kSuccess) {
         std::cout << "Cannot play." << std::endl;
       }
     });
