@@ -1,23 +1,34 @@
 # Tizen WASM Player - Sample Application
 
+*Table of Contents:*
+* [Introduction](#introduction)
+* [Building the sample widget with Tizen Studio](#building-the-sample-widget-with-tizen-studio)
+  * [Prerequisites](#prerequisites)
+  * [Step-by-step guide](#step-by-step-guide)
+* [Required Emscripten flags](#required-emscripten-flags)
+
 ## Introduction
 
-This is a sample application showing how to use **[Tizen WASM Player](https://developer.samsung.com/smarttv/develop/extension-libraries/webassembly/tizen-wasm-player/overview)**
+This is a sample application showing how to use **[Tizen WASM Player](https://developer.samsung.com/smarttv/develop/extension-libraries/webassembly/tizen-wasm-player/overview.html)**
 to play media on a TizenTV device using a WebAssembly module.
 
 The sample application's features are:
 * elementary media stream playback using `HTMLMediaElement` with a
-  `ElementaryMediaStreamSource` data source (*Normal Latency* mode),
-* looping video,
-* implementation of Seeking and [Multitasking](https://developer.samsung.com/SmartTV/develop/guides/fundamentals/multitasking.html).
+  `ElementaryMediaStreamSource` data source ([Normal Latency mode](https://developer.samsung.com/smarttv/develop/extension-libraries/webassembly/tizen-wasm-player/overview.html#normal-latency)),
+* [looping video](https://developer.samsung.com/smarttv/develop/extension-libraries/webassembly/tizen-wasm-player/usage-guide.html#loop),
+* implementation of [Seeking](https://developer.samsung.com/smarttv/develop/extension-libraries/webassembly/tizen-wasm-player/usage-guide.html#seek) and [Multitasking](https://developer.samsung.com/SmartTV/develop/guides/fundamentals/multitasking.html).
 
 Packetized data is hardcoded in app to maximize data access simplicity.
 
 ## Building the sample widget with Tizen Studio
 
+### Prerequisites
+
 Emscripten SDK with Samsung extensions and Tizen Studio are required to build
-this sample. Please follow [a guide on Samsung Developers](https://developer.samsung.com/smarttv/develop/extension-libraries/webassembly/getting-started/downloading-and-installing)
+this sample. Please follow [a guide on Samsung Developers](https://developer.samsung.com/smarttv/develop/extension-libraries/webassembly/getting-started/downloading-and-installing.html)
 to learn more about their installation and setup.
+
+### Step-by-step guide
 
 1. Launch Tizen Studio.
 
@@ -29,7 +40,7 @@ to learn more about their installation and setup.
    * select 'Empty' application template and click 'Next',
    * name the project `EMSSSample` and click 'Next',
    * enter paths to the Emscripten configuration file and cache directory
-     (please refer to [a guide on Tizen Developers](https://developer.samsung.com/smarttv/develop/extension-libraries/webassembly/getting-started/creating-hello-webassembly-tv-application)
+     (please refer to [a guide on Tizen Developers](https://developer.samsung.com/smarttv/develop/extension-libraries/webassembly/getting-started/creating-hello-webassembly-tv-application.html)
      for details),
    * click 'Finish'.
 
@@ -55,7 +66,7 @@ to learn more about their installation and setup.
       * `elementary_media_stream_source_sample/widget/*` -> `EMSSSsample/`
       * `elementary_media_stream_source_sample/src/*` -> `EMSSSsampleModule/`
 
-5. Add neccessary compiler and linker flags to the WebAssembly module:
+5. Add necessary compiler and linker flags to the WebAssembly module:
    * click right mouse button on the `EMSSSsampleModule` project in 'Project
      Explorer',
    * select 'Properties' from the context menu,
