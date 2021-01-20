@@ -10,10 +10,10 @@
 ## Introduction
 
 This is a sample application showing how to use **[Tizen WASM Player](https://developer.samsung.com/smarttv/develop/extension-libraries/webassembly/tizen-wasm-player/overview.html)**
-to play media on a TizenTV device using a WebAssembly module.
+to play media on a Samsung Smart TV device using a WebAssembly module.
 
 The sample application's features are:
-* elementary media stream playback using `HTMLMediaElement` with a
+* elementary media stream playback using `HTMLMediaElement` with an
   `ElementaryMediaStreamSource` data source ([Normal Latency mode](https://developer.samsung.com/smarttv/develop/extension-libraries/webassembly/tizen-wasm-player/overview.html#normal-latency)),
 * [looping video](https://developer.samsung.com/smarttv/develop/extension-libraries/webassembly/tizen-wasm-player/usage-guide.html#loop),
 * implementation of [Seeking](https://developer.samsung.com/smarttv/develop/extension-libraries/webassembly/tizen-wasm-player/usage-guide.html#seek) and [Multitasking](https://developer.samsung.com/SmartTV/develop/guides/fundamentals/multitasking.html).
@@ -56,18 +56,18 @@ to learn more about their installation and setup.
    from this sample:
 
    a. Remove generated HTML5 and C++ files:
-      * `EMSSSsample/index.html`
-      * `EMSSSsample/main.js`
-      * `EMSSSsample/css/style.css`
+      * `EMSSSample/index.html`
+      * `EMSSSample/main.js`
+      * `EMSSSample/css/style.css`
       * `EMSSSampleModule/inc/empty.hpp`
       * `EMSSSampleModule/src/empty.cpp`
 
    b. Copy sample widget's files to the projects in Tizen Studio:
-      * `elementary_media_stream_source_sample/widget/*` -> `EMSSSsample/`
-      * `elementary_media_stream_source_sample/src/*` -> `EMSSSsampleModule/`
+      * `elementary_media_stream_source_sample/widget/*` -> `EMSSSample/`
+      * `elementary_media_stream_source_sample/src/*` -> `EMSSSampleModule/`
 
 5. Add necessary compiler and linker flags to the WebAssembly module:
-   * click right mouse button on the `EMSSSsampleModule` project in 'Project
+   * click right mouse button on the `EMSSSampleModule` project in 'Project
      Explorer',
    * select 'Properties' from the context menu,
    * select 'C/C++ Build' -> 'Settings',
@@ -80,7 +80,7 @@ to learn more about their installation and setup.
             -s ENVIRONMENT_MAY_BE_TIZEN -pthread -s USE_PTHREADS=1 -s PTHREAD_POOL_SIZE=1
             ```
             *(flags are explained below, in* Required Emscripten flags *section)*
-         * remove `-s EXPORT_NAME=EMSSSsampleModule -s MODULARIZE=1 ` from
+         * remove `-s EXPORT_NAME=EMSSSampleModule -s MODULARIZE=1 ` from
             'Linker flags'.
             *Please note:* this step is required, because code loading
             modularized and non-modularized WebAssembly modules differ slightly.

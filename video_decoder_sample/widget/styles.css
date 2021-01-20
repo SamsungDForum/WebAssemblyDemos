@@ -1,0 +1,36 @@
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #1a1a1a;
+  color: #cbcddb;
+}
+
+#video-element {
+  width: 0;
+  height: 0;
+}
+
+.centered {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.copyrights {
+  position: absolute;
+  left: 50%;
+  top: 95%;
+  transform: translate(-50%, -50%);
+}
+
+.error {
+  color: #da4949;
+}
+
+.invisible {
+  display: none;
+}
