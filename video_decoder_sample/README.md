@@ -82,7 +82,7 @@ to learn more about their installation and setup.
       * select 'Emscripten C++ Linker' -> 'Miscellaneous':
          * append following flags to 'Linker flags':
             ```bash
-            -s ENVIRONMENT_MAY_BE_TIZEN -pthread -s USE_PTHREADS=1 -s PTHREAD_POOL_SIZE=1
+            -s ENVIRONMENT_MAY_BE_TIZEN -pthread -s USE_PTHREADS=1 -s PTHREAD_POOL_SIZE=1 -s USE_SDL2=1
             ```
             *(flags are explained below, in* Required Emscripten flags *section)*
          * remove `-s EXPORT_NAME=VideoDecoderSampleModule -s MODULARIZE=1 ` from
