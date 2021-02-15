@@ -15,8 +15,8 @@ to play media on a Samsung Smart TV device using a WebAssembly module.
 The sample application's features are:
 * elementary media stream playback using `HTMLMediaElement` with an
   `ElementaryMediaStreamSource` data source ([Normal Latency mode](https://developer.samsung.com/smarttv/develop/extension-libraries/webassembly/tizen-wasm-player/overview.html#normal-latency)),
-* [looping video](https://developer.samsung.com/smarttv/develop/extension-libraries/webassembly/tizen-wasm-player/usage-guide.html#loop),
-* implementation of [Seeking](https://developer.samsung.com/smarttv/develop/extension-libraries/webassembly/tizen-wasm-player/usage-guide.html#seek) and [Multitasking](https://developer.samsung.com/SmartTV/develop/guides/fundamentals/multitasking.html).
+* [looping video](https://developer.samsung.com/smarttv/develop/extension-libraries/webassembly/tizen-wasm-player/wasm-player-usage-guide.html#loop),
+* implementation of [Seeking](https://developer.samsung.com/smarttv/develop/extension-libraries/webassembly/tizen-wasm-player/wasm-player-usage-guide.html#seek) and [Multitasking](https://developer.samsung.com/SmartTV/develop/guides/fundamentals/multitasking.html).
 
 Packetized data is hardcoded in app to maximize data access simplicity.
 

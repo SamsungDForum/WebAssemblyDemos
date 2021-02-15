@@ -9,7 +9,7 @@
 
 ## Introduction
 
-This is a sample application showing how to use **[Tizen WASM Video Decoder](https://developer.samsung.com/smarttv/develop/extension-libraries/webassembly/tizen-wasm-player/video-decoder.html)**
+This is a sample application showing how to use **[Tizen WASM Video Decoder](https://developer.samsung.com/smarttv/develop/extension-libraries/webassembly/tizen-wasm-player/video-decoder-usage-guide.html)**
 to play media on a Samsung Smart TV device using a WebAssembly module.
 
 This application is an extension to Tizen WASM Player Sample Application. It presents how to extend existing WASM Player application to achieve decoding video frames to GL texture functionality.
@@ -20,8 +20,8 @@ Video Decoder logic is located in `video_decoder_sdf_sample.h` and `video_decode
 The sample application's features are:
 * elementary media stream playback using `HTMLMediaElement` with an
   `ElementaryMediaStreamSource` data source and `kVideoTexture` rendering mode,
-* [looping video](https://developer.samsung.com/smarttv/develop/extension-libraries/webassembly/tizen-wasm-player/usage-guide.html#loop),
-* implementation of [Seeking](https://developer.samsung.com/smarttv/develop/extension-libraries/webassembly/tizen-wasm-player/usage-guide.html#seek) and [Multitasking](https://developer.samsung.com/SmartTV/develop/guides/fundamentals/multitasking.html).
+* [looping video](https://developer.samsung.com/smarttv/develop/extension-libraries/webassembly/tizen-wasm-player/wasm-player-usage-guide.html#loop),
+* implementation of [Seeking](https://developer.samsung.com/smarttv/develop/extension-libraries/webassembly/tizen-wasm-player/wasm-player-usage-guide.html#seek) and [Multitasking](https://developer.samsung.com/SmartTV/develop/guides/fundamentals/multitasking.html).
 
 Packetized data is hardcoded in app to maximize data access simplicity.
 
