@@ -82,7 +82,7 @@ to learn more about their installation and setup.
       * select 'Emscripten C++ Linker' -> 'Miscellaneous':
          * append following flags to 'Linker flags':
             ```bash
-            -s ENVIRONMENT_MAY_BE_TIZEN -pthread -s USE_PTHREADS=1 -s PTHREAD_POOL_SIZE=1 -s USE_SDL2=1
+            -s ENVIRONMENT_MAY_BE_TIZEN -pthread -s USE_PTHREADS=1 -s PTHREAD_POOL_SIZE=1 -s USE_SDL=2
             ```
             *(flags are explained below, in* Required Emscripten flags *section)*
          * remove `-s EXPORT_NAME=VideoDecoderSampleModule -s MODULARIZE=1 ` from
@@ -112,5 +112,5 @@ sample:
 |------|-------------|
 | `-s ENVIRONMENT_MAY_BE_TIZEN` | Enables usage of Samsung Tizen Emscripten extensions available on Samsung Tizen TVs. This flag is necessary to use Elementary Media Stream Source. |
 | `-pthread -s USE_PTHREADS=1` | Enables usage of threads in WebAssembly module.  |
-| `-s USE_SDL2=1` | Flag enabling SDL2 library (libsdl2). |
+| `-s USE_SDL=2` | Flag enabling SDL2 library (libsdl2). |
 | `-s PTHREAD_POOL_SIZE=1` | WebAssembly module will be prepared to start indicated number of threads. It's important to set this parameter to a maximum number of threads that an application uses; otherwise starting new threads may fail! See [pthreads](https://emscripten.org/docs/porting/pthreads.html) in Emscripten documentation for more information. |
