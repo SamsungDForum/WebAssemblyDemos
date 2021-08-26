@@ -77,6 +77,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   }
 
   const videoElement = document.getElementById('video-element');
+  videoElement.requestFullscreen();
   wasmLoadingDiv.classList.add('invisible');
   videoElement.classList.remove('invisible');
 }); // DOMContentLoaded handler

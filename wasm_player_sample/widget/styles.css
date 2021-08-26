@@ -9,21 +9,14 @@ body {
 }
 
 #video-element {
-  width: 1600px;
-  height: 900px;
+  width: 1920px;
+  height: 1080px;
 }
 
 .centered {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.copyrights {
-  position: absolute;
-  left: 50%;
-  top: 95%;
   transform: translate(-50%, -50%);
 }
 

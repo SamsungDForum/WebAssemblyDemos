@@ -46,7 +46,7 @@ extern const samsung::wasm::ElementaryVideoTrackConfig kVideoTrackConfig;
 // Usually those wouldn't be hardcoded but either demuxed from a container or
 // received from network (depending on the use case and protocol used by an
 // application).
-extern const std::array<samsung::wasm::ElementaryMediaPacket, 413>
+extern const std::array<samsung::wasm::ElementaryMediaPacket, 564>
     kVideoPackets;
 
 }  // namespace sample_data
