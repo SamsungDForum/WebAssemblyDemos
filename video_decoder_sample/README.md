@@ -96,6 +96,10 @@ to learn more about their installation and setup.
 6. Build the project:
    * click right mouse button on the `VideoDecoderSample` project in 'Project Explorer',
    * click 'Build Project' in context menu.
+   * if python3 not found on ubuntu 22.04 add a symbolic link to it:
+   ```bash
+   sudo ln -s /usr/bin/python3 /usr/bin/python
+   ```
 
 7. Create a widget package:
    * click right mouse button on the `VideoDecoderSample` project in 'Project Explorer',
